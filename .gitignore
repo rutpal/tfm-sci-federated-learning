@@ -1,0 +1,41 @@
+# Entorno virtual
+venv/
+.venv/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Jupyter
+.ipynb_checkpoints/
+
+# VS Code
+.vscode/
+
+# Dataset y datos generados
+data/
+datasets/
+
+# Modelos entrenados
+models/
+checkpoints/
+*.pth
+*.pt
+
+# Logs y métricas
+logs/
+*.log
+
+# CodeCarbon
+emissions.csv
+emissions*.csv
+
+# Archivos temporales
+tmp/
+temp/
+
+# Sistema
+.DS_Store
+Thumbs.db

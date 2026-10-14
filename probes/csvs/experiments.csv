@@ -1,0 +1,2 @@
+campaign_id,timestamp,device_category,purchase_year,scenario,dataset,model,epochs,batch_size,learning_rate,random_seed,training_samples,accuracy,training_time_s
+mycampaign,2026-10-08 14:08:37,laptop,2023,centralized,CIFAR10,SimpleCNN,3,64,0.001,42,50000,0.6573,92.09693837165833
