@@ -1,5 +1,3 @@
-import logging
-
 import config
 from pathlib import Path
 from codecarbon import EmissionsTracker
@@ -27,13 +25,11 @@ def run_training_with_codecarbon(
         output_file = (
             f"cc_{probe_id}_{scenario}_{client_id}.csv"
         )
-    
-
-    logging.getLogger("codecarbon").setLevel(logging.ERROR)
 
     tracker = EmissionsTracker(
         output_dir=config.PROBES_DIR,
-        output_file=output_file
+        output_file=output_file,
+        log_level="error"
     )
 
     tracker.start()

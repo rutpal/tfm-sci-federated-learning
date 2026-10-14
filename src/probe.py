@@ -3,6 +3,10 @@
 from pathlib import Path
 import pandas as pd
 import time
+from pathlib import Path
+import zipfile
+import base64
+import requests
 
 
 def build_env(
@@ -113,3 +117,54 @@ def save_env(
     )
 
     return env_file
+
+def create_probe_zip(
+    probe_id,
+    probes_dir
+):
+
+    zip_path = (
+        Path(probes_dir)
+        / f"{probe_id}.zip"
+    )
+
+    with zipfile.ZipFile(
+        zip_path,
+        "w",
+        zipfile.ZIP_DEFLATED
+    ) as zipf:
+
+        for csv_file in Path(probes_dir).glob(
+            f"*{probe_id}*.csv"
+        ):
+            zipf.write(
+                csv_file,
+                arcname=csv_file.name
+            )
+
+    return zip_path
+    
+def upload_probe_zip(
+    zip_path,
+    endpoint_url
+):
+
+    with open(zip_path, "rb") as f:
+
+        encoded_file = (
+            base64
+            .b64encode(f.read())
+            .decode()
+        )
+
+    response = requests.post(
+        endpoint_url,
+        data={
+            "filename": zip_path.name,
+            "file": encoded_file
+        }
+    )
+
+    response.raise_for_status()
+
+    return response.json()

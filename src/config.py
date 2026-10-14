@@ -2,6 +2,7 @@
 
 DATA_DIR = "../data"
 PROBES_DIR = "../probes"
+ENDPOINT_URL = "https://script.google.com/macros/s/AKfycbxJxNenedeR3EGhgxFPo30ZZl_sEdXVq14dJeGGDpR-ZkJnWbqr9PQhdN5-YWa85-uL/exec"
 
 # Dataset y modelo
 

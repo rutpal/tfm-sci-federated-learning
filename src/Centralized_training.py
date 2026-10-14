@@ -113,12 +113,12 @@ def run_centralized_experiment(
     print(f"Scenario: {scenario}")
     print(f"Rounds: {config.NUM_ROUNDS}")
 
-    print(f"    Global accuracy: {global_accuracy:.4f}")
+    print(f"    Global accuracy: {accuracy:.4f}")
 
-    print(f"    Energy total: {energy_total_kwh:.6f}")
+    print(f"    Energy total: {cc_metrics['energy_total_kwh']:.6f}")
 
-    print(f"    Emissions total: {emissions_total_kg:.8f}")
+    print(f"    Emissions total: {cc_metrics['emissions_total_kg']:.8f}")
 
-    print(f"Training time total: {training_time_total_s:.2f}")
+    print(f"Training time total: {cc_metrics['training_time_total_s']:.2f}")
 
     return env

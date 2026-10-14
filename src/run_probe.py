@@ -1,6 +1,8 @@
 # run_probe.py
 
 import argparse
+import config
+from probe import (create_probe_zip, upload_probe_zip)
 
 from environment import get_probe_context
 
@@ -11,7 +13,6 @@ from Centralized_training import (
 from Federated_training import (
     run_federated_experiment
 )
-
 
 def parse_args():
 
@@ -120,6 +121,65 @@ def main():
         f"\nProbe ID: {probe_id}"
     )
 
+    # ==========================================
+    # Comprimir resultados
+    # ==========================================
+
+    zip_file = create_probe_zip(
+        probe_id,
+        config.PROBES_DIR
+    )
+
+    print(
+        f"\nResults saved to: {zip_file}"
+    )
+
+    # ==========================================
+    # Subir resultados
+    # ==========================================
+
+    print(
+        "\nUploading results..."
+    )
+
+    response = upload_probe_zip(
+        zip_file,
+        config.ENDPOINT_URL
+    )
+
+    if response.get("status") == "ok":
+
+        print(
+            "\n================================="
+        )
+
+        print(
+            "Probe completed successfully."
+        )
+
+        print(
+            f"Probe ID: {probe_id}"
+        )
+
+        print(
+            f"Uploaded file: {zip_file.name}"
+        )
+
+        print(
+            "Results successfully sent."
+        )
+
+        print(
+            "================================="
+        )
+
+    else:
+
+        print(
+            "\nUpload failed."
+        )
+
+        print(response)
 
 if __name__ == "__main__":
     main()
