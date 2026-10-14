@@ -1,2 +1,0 @@
-probe_id,timestamp,device_category,device_year,scenario,dataset,model,num_clients,num_rounds,epochs,batch_size,learning_rate,training_samples,accuracy,energy_total_kwh,emissions_total_kg,training_time_total_s
-25c90a30-dc90-422e-96a2-a5d3d42db3ba,2026-10-14 14:30:51,laptop,2023,FL_3,CIFAR10,SimpleCNN,3,2,2,64,0.001,50000,0.6133,0.0006426858910526578,0.0001118594793377151,101.72319682799935

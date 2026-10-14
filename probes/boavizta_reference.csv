@@ -1,6 +1,0 @@
-device_category,te_kgco2eq,te_min_kgco2eq,te_max_kgco2eq,el_hours,el_years,source,retrieval_date
-laptop,181.0,181.0,181.0,35040.0,4.0,boavizta,2026-10-13
-desktop,277.0,277.0,277.0,52560.0,6.0,boavizta,2026-10-13
-smartphone,84.0,84.0,84.0,21900.0,2.5,boavizta,2026-10-13
-tablet,75.9,75.9,75.9,26280.0,3.0,boavizta,2026-10-13
-server,900.0,459.9,2087.0,35040.0,4.0,boavizta,2026-10-13

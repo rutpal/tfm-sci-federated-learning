@@ -1,2 +1,0 @@
-probe_id,timestamp,device_category,device_year,scenario,dataset,model,epochs,batch_size,learning_rate,training_samples,accuracy,training_time_s
-aa45ccb5-8aa1-470d-a11e-caf8491f1039,2026-10-12 11:22:04,laptop,2023,centralized,CIFAR10,SimpleCNN,2,64,0.001,50000,0.6233,65.6146948337555
