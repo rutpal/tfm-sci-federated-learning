@@ -1,14 +1,25 @@
 # SCI Federated Learning Experiments
 
-This repository contains the experimental framework used to evaluate the environmental sustainability of Centralized Learning and Federated Learning scenarios using:
+This repository contains the experimental framework used in a Master's Thesis research project focused on the environmental sustainability of Artificial Intelligence training workloads.
 
-- CIFAR-10
-- PyTorch
-- Flower
-- CodeCarbon
-- Boavizta
+The objective is to compare Centralized Learning vs Federated Learning in terms of CO2e emissions using the Software Carbon Intensity (SCI) framework and embodied carbon estimations obtained from Boavizta.
 
-The experiments generate environmental and sustainability data that will be used to calculate Software Carbon Intensity (SCI).
+The framework automatically:
+
+- Trains machine learning models.
+- Measures energy consumption and emissions using CodeCarbon.
+- Collects hardware and execution metadata.
+- Uploads results automatically for research purposes.
+
+---
+
+# Why participate?
+
+The goal of this study is to understand how training strategies and hardware choices affect the sustainability of AI systems. The more variety of devices and locations involved, the more valuable the dataset becomes. Particularly interesting are executions from:
+
+- Different countries and regions, as electricity carbon intensity varies across locations and directly affects operational emissions.
+- Different hardware generations (Laptops, Desktops, Servers, Cloud environments).
+- Both new and old devices, since embodied carbon plays an important role in the sustainability assessment.
 
 ---
 
@@ -16,13 +27,13 @@ The experiments generate environmental and sustainability data that will be used
 
 ## Python
 
-This project was developed using:
+This project was developed and tested using:
 
 ```text
 Python 3.11+
 ```
 
-Check your version:
+Verify your installation:
 
 ```bash
 python --version
@@ -74,7 +85,7 @@ pip install -r requirements.txt
 
 # Running the experiments
 
-The full experimental pipeline can be executed using:
+Execute:
 
 ```bash
 python run_probe.py
@@ -99,7 +110,7 @@ Device purchase year: 2023
 
 ## Command-line execution
 
-The experiment can also be launched directly using arguments:
+The experiment can also be started directly:
 
 ```bash
 python run_probe.py \
@@ -119,26 +130,75 @@ server
 
 ---
 
-# Experiments executed
+# Experiments executed automatically
 
-The framework automatically executes:
+The framework runs the following scenarios:
 
 1. Centralized Learning
 2. Federated Learning (3 clients)
 3. Federated Learning (5 clients)
 4. Federated Learning (7 clients)
 
+No additional interaction is required.
+
+---
+
+# Data collected
+
+The experiment collects:
+
+## Experimental metadata
+
+```text
+Device category
+Device purchase year
+Training configuration
+Number of clients
+Number of rounds
+Dataset size
+```
+
+## Machine learning metrics
+
+```text
+Accuracy
+Training duration
+```
+
+## Sustainability metrics
+
+```text
+Energy consumption
+Operational emissions
+```
+
+## Hardware metadata
+
+```text
+CPU information
+RAM information
+Hardware characteristics
+```
+
+## Geographic metadata
+
+```text
+Country
+Region
+Carbon intensity used by CodeCarbon
+```
+
 ---
 
 # Generated files
 
-Results are stored under:
+The framework creates several CSV files under:
 
 ```text
 probes/
 ```
 
-Example:
+Examples:
 
 ```text
 env_<probe_id>_centralized.csv
@@ -153,19 +213,15 @@ cc_<probe_id>_FL_3_3.csv
 
 env_<probe_id>_FL_5.csv
 
-...
-
 env_<probe_id>_FL_7.csv
-
-...
 ```
 
 Where:
 
 ```text
-env = Experimental context and results
+env = Experimental metadata and aggregated results
 
-cc = CodeCarbon measurements
+cc = Raw CodeCarbon measurements
 ```
 
 ---
@@ -180,52 +236,37 @@ At the end of the execution:
 <probe_id>.zip
 ```
 
-2. The ZIP file is automatically uploaded to the project collection endpoint.
+2. The ZIP file is uploaded automatically to the data collection endpoint.
 
-3. A confirmation message is displayed when the upload succeeds.
+3. A confirmation message is displayed.
+
+No manual submission is required.
 
 ---
 
-# Output data
+# Privacy
 
-The collected data includes:
+The framework does not collect:
 
-## Experimental metadata
+- Personal files
+- Documents
+- Browsing history
+- Passwords
+- User credentials
 
-```text
-Device category
-Device purchase year
-Scenario
-Training configuration
-Number of clients
-Number of rounds
-Training samples
-```
+Only technical and experimental information required for the study is collected.
 
-## Machine learning metrics
+---
 
-```text
-Accuracy
-Training duration
-```
+# Expected duration
 
-## Sustainability metrics
+Typical execution times:
 
-```text
-Energy consumption (kWh)
-Carbon emissions (kgCO2eq)
-```
-
-## CodeCarbon telemetry
-
-```text
-CPU information
-RAM information
-Location
-Carbon intensity
-Electricity consumption
-Operational emissions
-```
+| Device | Estimated duration |
+|----------|----------|
+| Modern Laptop/Desktop | 10-15 min |
+| Older Laptop/Desktop | 15-25 min |
+| Cloud/Server Environment | Variable |
 
 ---
 
@@ -233,7 +274,7 @@ Operational emissions
 
 ## Module not found
 
-Make sure the virtual environment is activated:
+Verify that the virtual environment is active:
 
 ### Linux / macOS
 
@@ -255,16 +296,26 @@ pip install -r requirements.txt
 
 ---
 
-## Upload errors
+## Upload error
 
 If the automatic upload fails:
 
 1. Keep the generated ZIP file.
-2. Contact the project maintainer.
-3. Provide the Probe ID shown at the end of the execution.
+2. Note the Probe ID displayed at the end.
+3. Contact the repository owner.
 
 ---
 
-# License
+# Research context
 
-This repository is distributed for academic and research purposes only.
+This framework is part of a Master's Thesis focused on:
+
+- Sustainable Artificial Intelligence
+- Federated Learning
+- Software Carbon Intensity (SCI)
+- Embodied Carbon
+- Environmental impact of machine learning systems
+
+Every execution contributes to building a larger dataset that will support the analysis and conclusions of the study.
+
+Thank you for participating.
