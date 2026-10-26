@@ -1,6 +1,6 @@
 # SCI Federated Learning Experiments
 
-This repository contains the experimental framework used in a Master's Thesis research project focused on the environmental sustainability of Artificial Intelligence training workloads.
+This repository contains the experimental framework used in a research project conducted by the [SEC Research Group at UNIR](https://investigacion.unir.net/grupos/35512/detalle) (Universidad Internacional de La Rioja). The project investigates the environmental sustainability of Artificial Intelligence training workloads.
 
 The objective is to compare Centralized Learning vs Federated Learning in terms of CO2e emissions using the Software Carbon Intensity (SCI) framework and embodied carbon estimations obtained from Boavizta.
 
@@ -43,7 +43,9 @@ python --version
 
 # Installation
 
-## 1. Clone the repository
+## 1. Get the repository
+
+### Option A: Clone the repository with Git
 
 ```bash
 git clone https://github.com/rutpal/tfm-sci-federated-learning.git
@@ -51,8 +53,19 @@ git clone https://github.com/rutpal/tfm-sci-federated-learning.git
 cd tfm-sci-federated-learning
 ```
 
----
+### Option B: Download as ZIP
 
+Download the repository as a ZIP file from:
+
+https://github.com/rutpal/tfm-sci-federated-learning
+
+Then extract the ZIP file and navigate to the project directory:
+
+```bash
+cd tfm-sci-federated-learning-main
+```
+
+---
 ## 2. Create a virtual environment
 
 ### Linux / macOS
